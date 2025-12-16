@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@variant dark (&:where(.dark, .dark *));
+
+@utility bg-brand-main {
+  @apply bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 dark:bg-none dark:bg-slate-900;
+}
+
+@utility text-brand-main {
+  @apply bg-gradient-to-r from-red-600 via-orange-600 to-yellow-600 dark:bg-none dark:text-gray-200 bg-clip-text text-transparent;
+}
+
+@utility btn-brand {
+  @apply bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 dark:bg-none dark:bg-gray-300 dark:hover:bg-gray-200 dark:text-slate-900 text-white font-semibold transition-all duration-300 shadow-md hover:shadow-lg border-none;
+}
+
+@utility border-brand {
+  @apply border-orange-500 dark:border-slate-600;
+}
+
+:root {
+  --color-brand-primary: var(--color-orange-600);
+  --color-brand-secondary: var(--color-red-600);
+}
