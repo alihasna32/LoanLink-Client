@@ -1,0 +1,145 @@
+import React, { useState } from "react";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { imageUpload } from "../../../utilis";
+
+const AddLoan = () => {
+  const axiosSecure = useAxiosSecure();
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+
+  const handleAddLoan = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const form = e.target;
+    const title = form.title.value;
+    const shortDesc = form.shortDesc.value;
+    const category = form.category.value;
+    const interest = parseFloat(form.interest.value);
+    const maxLimit = parseFloat(form.maxLimit.value);
+    const requiredDocs = form.requiredDocs.value.split(",").map(doc => doc.trim());
+    const emiDurations = form.emiPlans.value.split(",").map(v => parseInt(v));
+    const showOnHome = form.showOnHome.checked;
+    const image = form.image.files[0];
+
+
+    const emiPlans = emiDurations.map(duration => ({
+      duration,
+      monthlyPayment: Math.round((maxLimit * interest / 100) / duration)
+    }));
+
+    try {
+      const imageUrl = await imageUpload(image);
+
+      const loanData = {
+        title,
+        shortDesc,
+        category,
+        interest,
+        maxLimit,
+        requiredDocs,
+        emiPlans,
+        image: imageUrl,
+        showOnHome,
+        createdAt: new Date(),
+      };
+
+      const res = await axiosSecure.post("/add-loan", loanData);
+
+      if (res.data.insertedId) {
+        toast.success("Loan added successfully!");
+        navigate("/dashboard/manage-loans");
+      }
+    } catch (err) {
+      console.log(err);
+      toast.error("Failed to add loan");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="p-6 shadow-sm shadow-orange-200 bg-white dark:bg-slate-900 rounded-xl border border-gray-100 dark:border-slate-700 max-w-3xl mx-auto">
+      <h2 className="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600 font-bold mb-6">Add New Loan</h2>
+
+      <form onSubmit={handleAddLoan} className="space-y-4">
+
+        <input
+          type="text"
+          name="title"
+          className="input input-bordered w-full focus:outline-none focus:border-orange-500"
+          placeholder="Loan Title"
+          required
+        />
+
+        <textarea
+          name="shortDesc"
+          className="textarea textarea-bordered w-full focus:outline-none focus:border-orange-500"
+          placeholder="Loan Description"
+          required
+        ></textarea>
+
+        <input
+          type="text"
+          name="category"
+          className="input input-bordered w-full focus:outline-none focus:border-orange-500"
+          placeholder="Category (e.g., Home, Business, Personal)"
+          required
+        />
+
+        <input
+          type="number"
+          name="interest"
+          className="input input-bordered w-full focus:outline-none focus:border-orange-500"
+          placeholder="Interest Rate (%)"
+          required
+        />
+
+        <input
+          type="number"
+          name="maxLimit"
+          className="input input-bordered w-full focus:outline-none focus:border-orange-500"
+          placeholder="Max Loan Limit"
+          required
+        />
+
+        <input
+          type="text"
+          name="requiredDocs"
+          className="input input-bordered w-full focus:outline-none focus:border-orange-500"
+          placeholder="Required Documents (comma separated)"
+          required
+        />
+
+        <input
+          type="text"
+          name="emiPlans"
+          className="input input-bordered w-full focus:outline-none focus:border-orange-500"
+          placeholder="EMI Durations (e.g., 3,6,12)"
+          required
+        />
+
+        <input
+          type="file"
+          name="image"
+          className="file-input file-input-bordered w-full focus:outline-none focus:border-orange-500"
+          accept="image/*"
+          required
+        />
+
+        <label className="flex items-center gap-2 cursor-pointer">
+          <input type="checkbox" name="showOnHome" className="checkbox checkbox-warning" />
+          <span>Show on Home</span>
+        </label>
+
+        <button className="btn btn-brand w-full" type="submit" disabled={loading}>
+          {loading ? "Adding..." : "Add Loan"}
+        </button>
+      </form>
+    </div>
+  );
+};
+
+export default AddLoan;
