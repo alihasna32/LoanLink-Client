@@ -18,19 +18,19 @@ const AvailableLoan = () => {
   const loanList = Array.isArray(loans) ? loans : [];
 
   return (
-    <div className="py-12 ">
-      <div className="w-10/12 mx-auto max-w-7xl">
-        <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600 mb-6 text-center">
+    <div className="pt-20 ">
+      <div className="w-10/12 mx-auto max-w-7xl text-center">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600 mb-4 inline-block">
           Available Loans
         </h2>
 
         {/* 3 Column Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-left mt-8">
 
           {loanList.map((loan) => (
             <div data-aos="fade-up"
               key={loan._id}
-              className="bg-white dark:bg-slate-800 shadow-md transition-transform duration-300 hover:scale-105 rounded-lg overflow-hidden flex flex-col border border-orange-100 dark:border-slate-700"
+              className="bg-white dark:bg-slate-800 shadow-md transition-transform duration-300 rounded-lg overflow-hidden flex flex-col border border-orange-100 dark:border-slate-700"
             >
               {/* Image */}
               <img

@@ -17,7 +17,7 @@ const Partners = () => {
     <section className="py-16 w-10/12 max-w-7xl shadow-sm shadow-orange-200 bg-white dark:bg-slate-900 mx-auto rounded-xl 2xl:rounded-3xl border border-gray-100 dark:border-slate-700">
       <div className="mx-auto text-center px-4">
 
-        <h2 className="text-3xl md:text-4xl 2xl:text-5xl font-extrabold mb-4 2xl:mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600 mb-4 inline-block">
           Trusted By Leading Organizations
         </h2>
 

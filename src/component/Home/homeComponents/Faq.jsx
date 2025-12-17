@@ -52,8 +52,8 @@ const Faq = () => {
   return (
     <section className="py-16">
       <div className="w-10/12 max-w-7xl mx-auto rounded-2xl bg-white dark:bg-slate-900 transition-colors duration-300 p-6 md:p-10 shadow-xl border border-gray-100 dark:border-slate-700">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600 mb-4 inline-block">
             Frequently Asked Questions
           </h2>
           <p className="text-center text-gray-600 dark:text-gray-300 mb-12">

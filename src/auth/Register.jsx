@@ -2,8 +2,8 @@ import { Link, useLocation, useNavigate } from 'react-router'
 import { FcGoogle } from 'react-icons/fc'
 import { toast } from 'react-hot-toast'
 import { useForm } from 'react-hook-form'
-import { imageUpload, saveOrUpdateUser } from '../../../LoanLive-Server/New folder/utilis'
-import useAuth from '../../../LoanLive-Server/New folder/hooks/useAuth'
+import { imageUpload, saveOrUpdateUser } from '../utilis/index.js'
+import useAuth from '../hooks/useAuth'
 import { CgSpinnerTwoAlt } from 'react-icons/cg'
 
 const Register = () => {

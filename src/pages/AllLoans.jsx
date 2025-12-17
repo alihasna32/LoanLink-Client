@@ -27,17 +27,17 @@ const AllLoans = () => {
 
   return (
     <section className="py-30">
-      <div className="w-10/12 mx-auto max-w-7xl">
-        <h2 className="text-4xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600 mb-12">
+      <div className="w-10/12 mx-auto max-w-7xl text-center">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600 mb-4 inline-block">
           Explore All Loan Options
         </h2>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left mt-6">
           {loanList.map((loan) => (
             <div data-aos="fade-up"
               key={loan._id}
-              className="bg-white dark:bg-slate-800 shadow-lg rounded-xl overflow-hidden transition-transform  ease-in-out hover:scale-105 hover:shadow-xl border border-orange-100 dark:border-slate-700"
+              className="bg-white dark:bg-slate-800 shadow-lg rounded-xl overflow-hidden transition-transform hover:shadow-xl border border-orange-100 dark:border-slate-700"
             >
               <img
                 src={loan.image}

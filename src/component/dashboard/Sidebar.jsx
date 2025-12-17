@@ -37,7 +37,7 @@ const Sidebar = () => {
 
         {/* Homepage */}
         <li className="group">
-          <Link to="/" className="flex items-center gap-3 p-2 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-800 transition-colors">
+          <Link to="/" className="flex items-center justify-center lg:justify-start gap-3 p-2 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-800 transition-colors">
             <FcHome size={30} />
             <span className="hidden lg:inline-block font-medium text-gray-700 dark:text-gray-200 group-hover:text-orange-600 dark:group-hover:text-orange-400">Homepage</span>
 
@@ -59,7 +59,7 @@ const Sidebar = () => {
       <div className="mt-6">
         <button
           onClick={handleLogout}
-          className="flex items-center gap-3 w-full p-2 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors group"
+          className="flex items-center justify-center lg:justify-start gap-3 w-full p-2 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors group"
         >
           <FiLogOut size={28} className="text-red-500" />
 

@@ -73,7 +73,7 @@ const Feedback = () => {
       <div className="w-10/12 max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex flex-col justify-center w-full md:w-2/3 lg:w-1/2 mx-auto mb-10 space-y-3 text-center">
-          <h1 className="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600 mb-4 inline-block">
             What Our Customers Say
           </h1>
           <p className="text-gray-600 dark:text-gray-300">

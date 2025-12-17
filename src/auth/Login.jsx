@@ -3,8 +3,8 @@ import { FcGoogle } from 'react-icons/fc'
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-hot-toast'
 import { CgSpinnerTwoAlt } from 'react-icons/cg'
-import useAuth from '../../../LoanLive-Server/New folder/hooks/useAuth'
-import { saveOrUpdateUser } from '../../../LoanLive-Server/New folder/utilis'
+import useAuth from '../hooks/useAuth'
+import { saveOrUpdateUser } from '../utilis/index.js'
 
 const Login = () => {
   const { signIn, signInWithGoogle, loading } = useAuth()

@@ -14,7 +14,7 @@ const ErrorPage = () => {
               viewBox='0 0 24 24'
               strokeWidth='2'
               stroke='currentColor'
-              className='w-6 h-6'
+              className='w-6 h-6 text-orange-500'
             >
               <path
                 strokeLinecap='round'
@@ -24,17 +24,17 @@ const ErrorPage = () => {
             </svg>
           </p>
 
-          <h1 className='mt-3 text-2xl font-semibold text-gray-800 md:text-3xl'>
+          <h1 className='mt-3 text-2xl font-semibold text-orange-600 dark:text-orange-500 md:text-3xl'>
             Something Went Wrong!
           </h1>
 
-          <p className='mt-4 '>Here are some helpful links:</p>
+          <p className='mt-4 text-gray-600 dark:text-gray-300'>Here are some helpful links:</p>
 
-          <div className='flex items-center w-full mt-6 gap-x-3 sm:w-auto'>
+          <div className='flex items-center w-full mt-6 gap-x-3 '>
             {/* Go Back Button */}
             <button
               onClick={() => navigate(-1)}
-              className='flex items-center justify-center w-1/2 px-5 py-1 text-sm text-gray-700 transition-colors duration-200 bg-white border rounded-lg gap-x-2 hover:bg-gray-100'
+              className='flex items-center justify-center w-1/2 px-5 py-2 text-sm text-gray-700 transition-colors duration-200 bg-white border rounded-lg gap-x-2 hover:bg-gray-100'
             >
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -42,7 +42,7 @@ const ErrorPage = () => {
                 viewBox='0 0 24 24'
                 strokeWidth='1.5'
                 stroke='currentColor'
-                className='w-5 h-5 rtl:rotate-180 text-green-500'
+                className='w-5 h-5 rtl:rotate-180 text-orange-500'
               >
                 <path
                   strokeLinecap='round'
@@ -57,7 +57,7 @@ const ErrorPage = () => {
             {/* Take Me Home Button */}
             <button
               onClick={() => navigate('/')}
-              className='w-1/2 px-5 py-1 text-sm text-white bg-green-500 rounded-lg hover:bg-green-600 transition-colors duration-200'
+              className='btn-brand px-5 py-2 rounded-md text-sm transition'
             >
               Take Me Home
             </button>
