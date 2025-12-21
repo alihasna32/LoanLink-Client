@@ -1,9 +1,9 @@
 import React from 'react';
 import "react-responsive-carousel/lib/styles/carousel.css";
 import { Carousel } from 'react-responsive-carousel';
-import bannerImg1 from '../../../assets/loan1.jpeg';
-import bannerImg2 from '../../../assets/loan2.jpeg';
-import bannerImg3 from '../../../assets/loan3.jpeg';
+import bannerImg1 from '../../../assets/loan1.jpg';
+import bannerImg2 from '../../../assets/loan2.jpg';
+import bannerImg3 from '../../../assets/loan3.jpg';
 import { Link } from 'react-router';
 import { motion } from 'framer-motion';
 
